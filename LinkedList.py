@@ -6,6 +6,7 @@ class Node:
         return self.data
 
 class LinkedList:
+    
     def __init__(self, nodes=None):
         self.head = None
         if nodes is not None:
@@ -65,7 +66,7 @@ class LinkedList:
             raise Exception("Empty List. Try inserting values.")
 
         if self.head.data == tnode:
-            return self.addfirst(newnode)
+            return self.addFirstnode(newnode)
         
         prev_node = self.head
         
@@ -95,7 +96,7 @@ if __name__ == "__main__":
     ll = LinkedList(['1','2','3','4'])
     print("Linked List is ", ll)
     ll.removeNode('3')
-    print("After removing 3 from LL "ll)
+    print("After removing 3 from LL ", ll)
     ll.addAfterNode('2',Node('3'))
     print(ll)
     ll.addFirstnode(Node('0'))
