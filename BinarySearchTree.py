@@ -20,11 +20,27 @@ class BST:
     def gettree(self):
         if self.left:
             self.left.gettree()
-        print( self.head),
+        print( self.head, end=" "),
         if self.right:
             self.right.gettree()
+
+    def BSTsearch(self, element):
+        if self.head == element:
+            return element
+
+        elif self.head < element:
+            if self.right is None:
+                return "Not Found"
+            return self.right.BSTsearch(element)
+        
+        else:
+            if self.left is None:
+                return "Not Found"
+            return self.left.BSTsearch(element)
+
 
 if __name__ == "__main__":
     t = BST(7)
     t.inserttree([5,2,8,9,6,20,10,15,100,70,30])
     t.gettree()
+    print(t.BSTsearch(1))
